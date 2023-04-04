@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>가계부 리스트</title>
+</head>
+<body>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>1</td>
+                    <td>userid</td>
+                    <td>date</td>
+                    <td>spent money</td>
+                    <td>memo</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${items}">
+                    <td>
+                        <a th:text="${item.id}" th:href="@{/ac/detail(id=${item.id})}"></a>
+                    </td>
+                    <td th:text="${item.usrId}"></td>
+                    <td th:text="${item.date}"></td>
+                    <td th:text="${item.spentMoney}"></td>
+                    <td th:text="${item.memo}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
