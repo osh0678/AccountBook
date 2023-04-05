@@ -1,5 +1,5 @@
 # AccountBook 프로젝트
-> 로그인, 가계부 기능 API, Springboot 프로젝트입니다.
+> 로그인, 가계부 기능 API 프로젝트입니다.
 
 # 개발 환경
 * Java 11
