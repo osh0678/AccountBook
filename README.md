@@ -22,6 +22,15 @@ accountBook/
 └── README.md
 ```
 
+# Docker로 실행방법
+
+```
+$ cd AccountBook #해당 디렉토리로 이동
+$ docker build -t accountbook . #도커 이미지 build
+$ docker run -p 8080:80 -d accountbook #도커 실행 (8080이 이미 사용중이라면 다른 포트로 사용바람)
+```
+
+
 # 개발자
 * 이름: 오성환
 * 이메일 : osh0678@naver.com
