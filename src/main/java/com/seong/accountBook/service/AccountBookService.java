@@ -57,10 +57,7 @@ public class AccountBookService {
 
     public Map<String, Object> getAllAccountBook(Integer usrId) {
         Map<String, Object> result = new HashMap<>();
-        System.out.println("usr : " + usrId);
-//        List<AccountBook> acList = accountBookRepository.findAll();
         List<AccountBook> acList = accountBookRepository.findByUsedYnAndUsrId("Y", usrId);
-        System.out.println("list : " + acList);
 
         List<AccountBookDTO> accountBookList = acList.stream()
                 .map(ac -> new AccountBookDTO(ac.getId(), ac.getUsrId(), ac.getDate(), ac.getSpentMoney(),
