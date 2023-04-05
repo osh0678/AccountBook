@@ -11,4 +11,4 @@ WORKDIR /app
 COPY ./target/accountbook-0.0.1-SNAPSHOT.jar /app
 
 # 컨테이너 실행 시 실행할 명령어 설정
-CMD ["java", "-jar", "accountbook-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "accountBook-0.0.1-SNAPSHOT-plain.jar"]
