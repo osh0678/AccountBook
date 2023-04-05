@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "bd0e323b-57a5-4f66-a6db-0240e8db02b9",
+		"name": "가계부",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15391016"
+	},
+	"item": [
+		{
+			"name": "회원",
+			"item": [
+				{
+					"name": "회원가입",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test@naver.com\",\r\n    \"password\" : \"test\",\r\n    \"name\" : \"오성환\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "로그인",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test@naver.com\",\r\n    \"password\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "로그아웃",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "가계부관리",
+			"item": [
+				{
+					"name": "가계부 생성",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ1MTc4N30.6OpdI8EaZO_4F9kLJDpb3DdukHwXM9ZegTkgcvwMmh8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ0ODA4MX0.PZ5c8EzVJ545MTiiA7vDAW7NHmrr8EhvddaUf-W5b4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spentMoney\": \"10000\",\r\n    \"m2emo\": \"식료품 구매\",\r\n    \"date\" : \"2023-04-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ac/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ac",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "가계부 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ5MzI1OH0.YG7DM4WDtP5hDaUv20pKBlotYeZW60PSGRo5YKZxfT4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ0ODA4MX0.PZ5c8EzVJ545MTiiA7vDAW7NHmrr8EhvddaUf-W5b4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"33\",\r\n    \"spentMoney\": \"10000\",\r\n    \"memo\": \"식료품 구매 2\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ac/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ac",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "가계부 삭제",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDU4NjAwMH0.c_0B3SIyEFqhadmaNkW5MkObkDGm1LNKwoSPsT4JaNM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ0ODA4MX0.PZ5c8EzVJ545MTiiA7vDAW7NHmrr8EhvddaUf-W5b4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "33",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/ac/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ac",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "가계부 복구",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDU4NjAwMH0.c_0B3SIyEFqhadmaNkW5MkObkDGm1LNKwoSPsT4JaNM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ0ODA4MX0.PZ5c8EzVJ545MTiiA7vDAW7NHmrr8EhvddaUf-W5b4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "33",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/ac/recover",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ac",
+								"recover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "가계부 전체 리스트",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDU4NjAwMH0.c_0B3SIyEFqhadmaNkW5MkObkDGm1LNKwoSPsT4JaNM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ0ODA4MX0.PZ5c8EzVJ545MTiiA7vDAW7NHmrr8EhvddaUf-W5b4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/ac/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ac",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "가계부 상세 정보",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDU4NjAwMH0.c_0B3SIyEFqhadmaNkW5MkObkDGm1LNKwoSPsT4JaNM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QG5hdmVyLmNvbSIsImV4cCI6MTY4MDQ0ODA4MX0.PZ5c8EzVJ545MTiiA7vDAW7NHmrr8EhvddaUf-W5b4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"33\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/ac/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ac",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
