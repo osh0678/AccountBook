@@ -29,7 +29,12 @@ $ cd AccountBook #해당 디렉토리로 이동
 $ docker build -t accountbook . #도커 이미지 build
 $ docker run -p 8080:80 -d accountbook #도커 실행 (8080이 이미 사용중이라면 다른 포트로 사용바람)
 ```
-
+# 프로젝트를 진행하면서...
+```
+새로운 프로젝트를 진행하면서 다시 한 번 개발이 재밌다고 느낀 계기
+JAVA와 Spring boot 버전업된 걸 사용해보면서 새로운 걸 또 배운 좋은 기회였다.
+validation 부분이라던지 세부적으로 고도화를 못한 부분이 아쉬웠다.
+```
 
 # 개발자
 * 이름: 오성환
